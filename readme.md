@@ -67,7 +67,7 @@ Siga as instruções cuidadosamente para garantir que o sistema funcione correta
 6. Adicione o comando `fly` para ativar ou desativar o modo de voo:
 
     ```pawn
-    CMD:fly(playerid)
+    CMD:fly(playerid)//Coloque o nome que achar melhor para o comando.
     {
         if(GetPVarType(playerid, "FlyMode")) 
             CancelFlyMode(playerid); // Desativa o modo de voo
