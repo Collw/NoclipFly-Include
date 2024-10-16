@@ -2,9 +2,6 @@
 
 Este README fornece um guia passo a passo sobre como integrar o sistema `NoclipFly` em seu gamemode SA:MP. 
 
-### Base
-Include baseada no código de [Southclawns](https://github.com/Southclawns).
-
 Siga as instruções cuidadosamente para garantir que o sistema funcione corretamente em seu projeto.
 
 ## 1. **Requisitos**
