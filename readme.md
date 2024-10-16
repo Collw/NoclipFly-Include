@@ -2,8 +2,8 @@
 
 Este README fornece um guia passo a passo sobre como integrar o sistema `NoclipFly` em seu gamemode SA:MP. 
 
-Base
-Include baseada no codigo de [Southclawns](github.com//Southclawns).
+### Base
+Include baseada no código de [Southclawns](https://github.com/Southclawns).
 
 Siga as instruções cuidadosamente para garantir que o sistema funcione corretamente em seu projeto.
 
@@ -100,9 +100,19 @@ Siga as instruções cuidadosamente para garantir que o sistema funcione correta
 1. Inicie seu servidor SA:MP.
 2. Conecte-se ao seu servidor e digite `/fly` para ativar o modo de voo.
 
-## 4. **Comandos Disponíveis**
+## 4. **Sobre o NoclipFly**
+O sistema **NoclipFly** permite que os jogadores do SA:MP ativem um modo de voo, permitindo que eles se movam livremente pelo ambiente, ignorando as colisões com objetos e terrenos. Ao ativar o modo, os jogadores podem utilizar as teclas de movimentação para subir, descer e se mover em todas as direções. O sistema é projetado para ser simples de usar e fácil de integrar em qualquer gamemode.
+
+## 5. **Comandos Disponíveis**
 - **/fly**: Ativa ou desativa o modo de voo (noclip) para o jogador.
 
-## 5. **Notas**
+## 6. **Notas**
 - O sistema redefine automaticamente o status noclip quando o jogador se conecta ou o servidor é inicializado.
 - O modo de voo permite que o jogador se mova livremente no ar usando o controle da câmera e os inputs do teclado.
+
+## 7. **Contribuições**
+Sinta-se à vontade para contribuir para este projeto. Você pode adicionar melhorias ou novas funcionalidades, e enviar suas alterações para revisão.
+
+## 8. **Créditos**
+Desenvolvedores: [Collw](https://github.com/Collw)  
+Base: [Southclawns](https://github.com/Southclawns).
