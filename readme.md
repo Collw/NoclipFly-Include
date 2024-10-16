@@ -1,26 +1,31 @@
-# NoclipFly Integration Guide
+# Guia de Integração do NoclipFly
 
-This README provides a step-by-step guide on how to integrate the `NoclipFly` system into your SA:MP gamemode. Follow the instructions carefully to ensure the system works smoothly in your project.
+Este README fornece um guia passo a passo sobre como integrar o sistema `NoclipFly` em seu gamemode SA:MP. 
 
-## 1. **Requirements**
-- **SA:MP Server Package** (Ensure you have the latest SA:MP server version).
-- **Pawno Compiler** (Included in the SA:MP package).
-- **ZCMD** Command Processor (used for handling commands efficiently).
-- **MapAndreas Plugin** (to assist with positioning, though this is optional).
+Base
+Include baseada no codigo de [Southclawns](github.com//Southclawns).
 
-## 2. **Files Needed**
-- `noclipfly.inc`: The include file with all the necessary functions for activating the fly mode (noclip).
-- Your gamemode `.pwn` file where the noclip system will be integrated.
+Siga as instruções cuidadosamente para garantir que o sistema funcione corretamente em seu projeto.
 
-## 3. **Installation Steps**
+## 1. **Requisitos**
+- **Pacote do Servidor SA:MP** (Certifique-se de ter a versão mais recente do servidor SA:MP).
+- **Compilador Pawno** (Incluído no pacote SA:MP).
+- **ZCMD** Processador de Comandos (usado para gerenciar comandos de forma eficiente).
+- **MapAndreas Plugin** (para ajudar na posicionamento, embora isso seja opcional).
 
-### Step 1: Add the `noclipfly.inc`
-1. Place the `noclipfly.inc` in the **`/pawno/include/`** directory of your SA:MP server.
-2. Ensure that the include is properly referenced in your gamemode file (`.pwn`).
+## 2. **Arquivos Necessários**
+- `noclipfly.inc`: O arquivo de inclusão com todas as funções necessárias para ativar o modo de voo (noclip).
+- Seu arquivo de gamemode `.pwn` onde o sistema noclip será integrado.
 
-### Step 2: Modifying Your Gamemode
-1. Open your gamemode `.pwn` file in Pawno.
-2. At the top of your gamemode, include the necessary libraries by adding the following lines:
+## 3. **Passos de Instalação**
+
+### Passo 1: Adicionar o `noclipfly.inc`
+1. Coloque o `noclipfly.inc` no diretório **`/pawno/include/`** do seu servidor SA:MP.
+2. Certifique-se de que a inclusão está referenciada corretamente no seu arquivo de gamemode (`.pwn`).
+
+### Passo 2: Modificando Seu Gamemode
+1. Abra seu arquivo de gamemode `.pwn` no Pawno.
+2. No topo do seu gamemode, inclua as bibliotecas necessárias adicionando as seguintes linhas:
 
     ```pawn
     #include <a_samp>
@@ -28,76 +33,76 @@ This README provides a step-by-step guide on how to integrate the `NoclipFly` sy
     #include <zcmd>
     ```
 
-3. In the `OnGameModeInit()` callback, initialize the Noclip system:
+3. No callback `OnGameModeInit()`, inicialize o sistema Noclip:
 
     ```pawn
     public OnGameModeInit()
     {
-        SetGameModeText("Your Gamemode Name");
+        SetGameModeText("Nome do Seu Gamemode");
         AddPlayerClass(0, 1958.3783, 1343.1572, 15.3746, 269.1425, 0, 0, 0, 0, 0, 0);
         
-        NoclipInit(); // Initialize noclip mode for all players
+        NoclipInit(); // Inicializa o modo noclip para todos os jogadores
 
         return 1;
     }
     ```
 
-4. In the `OnPlayerConnect()` callback, initialize Noclip data for each player:
+4. No callback `OnPlayerConnect()`, inicialize os dados Noclip para cada jogador:
 
     ```pawn
     public OnPlayerConnect(playerid)
     {
-        NoclipConnect(playerid); // Initialize noclip data when a player connects
+        NoclipConnect(playerid); // Inicializa os dados noclip quando um jogador se conecta
         return 1;
     }
     ```
 
-5. In the `OnPlayerUpdate()` callback, update the player's noclip status:
+5. No callback `OnPlayerUpdate()`, atualize o status noclip do jogador:
 
     ```pawn
     public OnPlayerUpdate(playerid)
     {
-        NoclipUpdate(playerid); // Update player's movement if they are in fly mode
+        NoclipUpdate(playerid); // Atualiza o movimento do jogador se ele estiver no modo de voo
         return 1;
     }
     ```
 
-6. Add the `fly` command to toggle the noclip fly mode on or off:
+6. Adicione o comando `fly` para ativar ou desativar o modo de voo:
 
     ```pawn
     CMD:fly(playerid)
     {
         if(GetPVarType(playerid, "FlyMode")) 
-            CancelFlyMode(playerid); // Turn off fly mode
+            CancelFlyMode(playerid); // Desativa o modo de voo
         else 
-            FlyMode(playerid); // Turn on fly mode
+            FlyMode(playerid); // Ativa o modo de voo
         
         return 1;
     }
     ```
 
-### Step 3: Compilation
-1. Save the `.pwn` file.
-2. Open Pawno and compile your gamemode. Ensure there are no errors.
-3. Place the compiled `.amx` file in the **`/gamemodes/`** directory.
+### Passo 3: Compilação
+1. Salve o arquivo `.pwn`.
+2. Abra o Pawno e compile seu gamemode. Certifique-se de que não há erros.
+3. Coloque o arquivo `.amx` compilado no diretório **`/gamemodes/`**.
 
-### Step 4: Configuration
-1. Open the **`server.cfg`** file in the root of your SA:MP server.
-2. Set your gamemode to the one you just compiled. For example:
+### Passo 4: Configuração
+1. Abra o arquivo **`server.cfg`** na raiz do seu servidor SA:MP.
+2. Defina seu gamemode para o que você acabou de compilar. Por exemplo:
 
     ```
-    gamemode0 yourgamemode 1
+    gamemode0 seugamemode 1
     ```
 
-3. Save the `server.cfg` file.
+3. Salve o arquivo `server.cfg`.
 
-### Step 5: Testing
-1. Start your SA:MP server.
-2. Connect to your server and type `/fly` to activate the fly mode.
+### Passo 5: Testando
+1. Inicie seu servidor SA:MP.
+2. Conecte-se ao seu servidor e digite `/fly` para ativar o modo de voo.
 
-## 4. **Commands Available**
-- **/fly**: Toggles the fly mode (noclip) for the player.
+## 4. **Comandos Disponíveis**
+- **/fly**: Ativa ou desativa o modo de voo (noclip) para o jogador.
 
-## 5. **Notes**
-- The system automatically resets noclip status when the player connects or the server initializes.
-- The fly mode allows the player to move freely in the air using camera control and keyboard inputs.
+## 5. **Notas**
+- O sistema redefine automaticamente o status noclip quando o jogador se conecta ou o servidor é inicializado.
+- O modo de voo permite que o jogador se mova livremente no ar usando o controle da câmera e os inputs do teclado.
