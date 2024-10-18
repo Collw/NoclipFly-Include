@@ -112,4 +112,4 @@ Sinta-se à vontade para contribuir para este projeto. Você pode adicionar melh
 
 ## 8. **Créditos**
 Desenvolvedores: [Collw](https://github.com/Collw)  
-Base: [Southclawns](https://github.com/Southclawns).
+Base: [Southclaws](https://github.com/Southclaws).
