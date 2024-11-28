@@ -111,5 +111,5 @@ O sistema **NoclipFly** permite que os jogadores do SA:MP ativem um modo de voo,
 Sinta-se à vontade para contribuir para este projeto. Você pode adicionar melhorias ou novas funcionalidades, e enviar suas alterações para revisão.
 
 ## 8. **Créditos**
-Desenvolvedores: [Collw](https://github.com/Collw)  [w0nht](https://github.com/w0nht)  
+Desenvolvedores: [Collw](https://github.com/Collw) & [w0nht](https://github.com/w0nht)  
 Base: [Southclaws](https://github.com/Southclaws).
